@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Priss ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+background:
+radial-gradient(circle at 20% 30%, #5b21b6 0%, transparent 40%),
+radial-gradient(circle at 80% 20%, #2563eb 0%, transparent 40%),
+radial-gradient(circle at 50% 80%, #9333ea 0%, transparent 40%),
+#020617;
+color:white;
+}
+
+.stars{
+position:fixed;
+inset:0;
+z-index:-2;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+50%{opacity:.2}
+}
+
+.container{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px;
+text-align:center;
+}
+
+h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+color:#ffd6e7;
+margin-bottom:15px;
+}
+
+.subtitle{
+opacity:.9;
+margin-bottom:25px;
+}
+
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:999px;
+background:#ff4d8d;
+color:white;
+cursor:pointer;
+font-size:1rem;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.hidden{
+display:none;
+}
+
+.mail-box{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+max-width:500px;
+}
+
+.letter{
+max-width:800px;
+line-height:2;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+margin-top:20px;
+display:none;
+white-space:pre-line;
+}
+
+.rose{
+position:fixed;
+top:-50px;
+font-size:28px;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(720deg);
+opacity:0;
+}
+}
+
+.final{
+margin-top:40px;
+display:none;
+animation:fade 2s;
+}
+
+.cake{
+font-size:100px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{
+transform:translateY(-15px);
+}
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+.footer{
+margin-top:20px;
+opacity:.8;
+}
+
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<audio id="music" loop>
+<source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<div id="opening">
+
+<h1>Untuk Priss ❤️</h1>
+
+<p class="subtitle">
+Ada hadiah kecil untuk seseorang yang spesial...
+</p>
+
+<button class="btn" onclick="showEnvelope()">
+Buka Hadiah 🎁
+</button>
+
+</div>
+
+<div id="envelope" class="hidden">
+
+<div class="mail-box">
+
+<h2>💌</h2>
+
+<h3>Ada surat untukmu</h3>
+
+<br>
+
+<p>
+Sebelum lanjut, baca ini dulu ya...
+</p>
+
+<br>
+
+<button class="btn" onclick="openLetter()">
+Buka Surat
+</button>
+
+</div>
+
+</div>
+
+<div id="letter" class="letter"></div>
+
+<div id="final" class="final">
+
+<h2>✨ Happy 19th Birthday ✨</h2>
+
+<br>
+
+<h1 style="font-size:3rem;">Priss ❤️</h1>
+
+<div class="cake">
+🎂
+</div>
+
+<p style="margin-top:15px;">
+Make a wish...
+</p>
+
+<br>
+
+<p>
+Di antara miliaran manusia di bumi...
+</p>
+
+<p>
+Aku menemukanmu.
+</p>
+
+<p>
+Dan itu adalah salah satu hal terbaik yang pernah terjadi dalam hidupku.
+</p>
+
+<br>
+
+<h3>
+— Llian ❤️
+</h3>
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<180;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+document.getElementById("stars").appendChild(star);
+
+}
+
+function createRose(){
+
+let rose=document.createElement("div");
+
+rose.classList.add("rose");
+
+rose.innerHTML="🌹";
+
+rose.style.left=Math.random()*100+"vw";
+
+rose.style.animationDuration=(6+Math.random()*5)+"s";
+
+document.body.appendChild(rose);
+
+setTimeout(()=>{
+rose.remove();
+},11000);
+
+}
+
+setInterval(createRose,1200);
+
+function showEnvelope(){
+
+document.getElementById("opening").style.display="none";
+
+document.getElementById("envelope").classList.remove("hidden");
+
+const music = document.getElementById("music");
+
+music.volume = 1;
+
+music.play()
+.then(() => console.log("Music Playing"))
+.catch(err => alert(err));
+
+}
+
+const message = `
+
+Hai Priss ❤️
+
+Selamat ulang tahun yang ke-19 yaa.
+
+Hari ini mungkin hanya satu hari dalam satu tahun.
+
+Tapi buat aku, hari ini terasa spesial.
+
+Karena hari ini adalah hari dimana seseorang yang sangat berarti dalam hidupku lahir ke dunia.
+
+Aku mungkin tidak selalu pandai mengungkapkan semuanya.
+
+Tapi ada satu hal yang selalu ingin aku sampaikan.
+
+Terima kasih.
+
+Terima kasih karena sudah menerima aku ke dalam hidupmu.
+
+Mungkin terdengar sederhana.
+
+Tapi buat aku, itu adalah salah satu hadiah terbesar yang pernah aku terima.
+
+Terima kasih untuk setiap cerita.
+
+Setiap tawa.
+
+Setiap perhatian.
+
+Dan setiap momen yang pernah kita lewati bersama.
+
+Aku tahu kita sama-sama sedang berjuang dengan jalan hidup masing-masing.
+
+Aku tahu tidak semua hari selalu mudah.
+
+Tapi aku berharap di usia yang baru ini...
+
+Kamu menemukan lebih banyak alasan untuk tersenyum.
+
+Lebih banyak kebahagiaan.
+
+Lebih banyak keberanian.
+
+Dan lebih banyak mimpi yang menjadi kenyataan.
+
+Kalau suatu hari nanti kamu merasa lelah...
+
+Ingatlah bahwa ada seseorang yang selalu mendoakanmu diam-diam.
+
+Seseorang yang selalu ingin melihatmu bahagia.
+
+Seseorang yang bersyukur karena semesta mempertemukannya denganmu.
+
+Sekali lagi...
+
+Selamat ulang tahun yang ke-19, Priss ❤️
+
+Semoga tahun ini menjadi salah satu tahun terbaik dalam hidupmu.
+
+`;
+
+function openLetter(){
+
+document.getElementById("envelope").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+let i=0;
+
+function type(){
+
+if(i < message.length){
+
+document.getElementById("letter").innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(type,30);
+
+}else{
+
+setTimeout(()=>{
+document.getElementById("final").style.display="block";
+},1500);
+
+}
+
+}
+
+type();
+
+}
+
+</script>
+
+</body>
+</html>
